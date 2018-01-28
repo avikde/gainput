@@ -1,5 +1,5 @@
 project(gainput)
-message(STATUS "GAINPUT version ${GAINPUT_VERSION}")
+#message(STATUS "GAINPUT version ${GAINPUT_VERSION}")
 
 set(CMAKE_MACOSX_RPATH 1)
 
@@ -17,7 +17,7 @@ endif()
 
 ## build STATIC *or* SHARED
 if (GAINPUT_BUILD_SHARED)
-  message(STATUS "Building shared libraries (-DGAINPUT_BUILD_SHARED=OFF to disable)")
+#  message(STATUS "Building shared libraries (-DGAINPUT_BUILD_SHARED=OFF to disable)")
   add_library(gainput SHARED ${sources} ${mmsources})
   set_target_properties(gainput PROPERTIES
     OUTPUT_NAME gainput
@@ -30,7 +30,7 @@ if (GAINPUT_BUILD_SHARED)
 endif (GAINPUT_BUILD_SHARED)
 
 if (GAINPUT_BUILD_STATIC)
-  message(STATUS "Building static libraries (-DGAINPUT_BUILD_STATIC=OFF to disable)")
+#  message(STATUS "Building static libraries (-DGAINPUT_BUILD_STATIC=OFF to disable)")
   add_library(gainputstatic STATIC ${sources} ${mmsources})
   set_target_properties(gainputstatic PROPERTIES DEBUG_POSTFIX -d FOLDER gainput)
   set(install_libs ${install_libs} gainputstatic)
