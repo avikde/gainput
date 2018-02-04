@@ -147,10 +147,11 @@ public:
 	/// Returns the platform-specific implementation of this device.
 	InputDevicePadImpl* GetPimpl() { return impl_; }
 
+	// Make public for pad, to detect pad presence
+	DeviceState InternalGetState() const;
+
 protected:
 	void InternalUpdate(InputDeltaState* delta);
-
-	DeviceState InternalGetState() const;
 
 private:
 	InputDevicePadImpl* impl_;
